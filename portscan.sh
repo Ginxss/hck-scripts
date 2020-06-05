@@ -2,8 +2,13 @@
 
 __usage="Usage: ./portscan.sh [-t ip] [-d] [-u]
 
+By default, your own IP-Address is used. The IP can be set manually.
+After the port scan, the file 'ports' will contain all open ports on the target machine.
+After the detailed scan, the file 'port_details' will contain the scan results for the open ports.
+After the UDP scan, the file 'ports_udp' will contain all open UDP ports.
+
 Options:
--t | --target: Set the IP-Address to scan. If no target is specified, your own IP-Address is used.
+-t | --target: Set the IP-Address to scan.
 -d | --detailed: Run a detailed scan on the open ports after the port scan.
 -u | --udp: Run a UDP scan on the top 1000 ports after the tcp scans.
 -h | --help: Print this help page."

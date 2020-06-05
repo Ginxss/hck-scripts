@@ -2,9 +2,10 @@
 
 __usage="Usage: ./networkscan.sh [-n network]
 
-By default, the network is determined automatically.
+By default, your own network is used. The network can be set manually.
 After completion, the file 'targets' will contain the names and addresses of all targets.
 
+Options:
 -n | --network: Set the network to scan, e.g. 192.168.178
 -h | --help: Print this help page"
 
