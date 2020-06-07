@@ -30,4 +30,10 @@ echo "Scanning $network..."
 # Scan the network, grep only the target names and addresses and write them to a file
 nmap -sn $network.0/24 | grep ^Nmap\ scan\ report | cut -d ' ' -f 5,6 > targets
 
-echo "Done, check 'targets' file"
+if [ -s targets ]; then
+	echo "Done, check 'targets' file"
+else
+	echo "No targets found"
+	rm targets
+	exit
+fi

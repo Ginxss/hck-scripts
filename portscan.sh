@@ -41,7 +41,13 @@ echo "Scanning for open ports on $target..."
 # Scan all ports, grep the port-lines and write them to a file
 nmap -p- -T4 $target | grep ^[0-9] > ports
 
-echo "Done - check the 'ports' file"
+if [ -s ports ]; then
+	echo "Done - check the 'ports' file"
+else
+	echo "No open ports found"
+	rm ports
+	exit
+fi
 
 if [ "$detailed" = true ]; then
 	echo "Running detailed scan on open ports..."
