@@ -63,6 +63,7 @@ fi
 if [ "$udp" = true ]; then
 	echo "Scanning for open ports on UDP (top 1000)..."
 
+	# Scan the top 1000 UDP ports, grep the port-lines and write them to a file
 	nmap -sU -T4 $target | grep ^[0-9] > ports_udp
 
 	echo "Done - check the 'ports_udp' file"
